@@ -1,6 +1,7 @@
 <template>
   <v-main>
     <v-btn @click="$router.push('/')">home</v-btn>
+
   </v-main>
 </template>
 
