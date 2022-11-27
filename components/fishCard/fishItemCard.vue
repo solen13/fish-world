@@ -22,12 +22,13 @@ export default {
   },
   methods:{
     btn(){
-      this.$router.push('/detail')
-     this.$store.commit('details',this.item)
-    },
-    turkish(){
+     let items= this.item['Species Name']
+      this.$router.push(items)
 
-    }
+
+     // this.$store.commit('details',this.item)
+    },
+
   }
 }
 </script>

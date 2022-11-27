@@ -1,5 +1,5 @@
 export  default ()=>({
-fishItems:[],
+  fishItems:[],
   detail:[]
 
 })

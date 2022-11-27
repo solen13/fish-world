@@ -1,9 +1,9 @@
 <template>
-  <v-main>
+  <v-main >
 
-    <h1 class="text-center mb-16 "  style="color: #425466">{{detailItem['Species Name']}}</h1>
+    <h1 v-if="detailItem" class="text-center mb-16 "   style="color: #425466">{{detailItem['Species Name']}}</h1>
 
-    <v-row>
+    <v-row v-if="detailItem">
       <v-col md="6" sm="12" >
 
           <v-card flat tile min-width="350" max-width="650">
@@ -54,33 +54,29 @@
       <v-col  md="6" sm="12">
         <div class="px-3">
 
-          <div v-if="biyolog">
-            <h1>biyology</h1>
-            <p>{{biyolog}}</p>
-          </div>
-          <hr>
 
-          <div v-if="detailItem.Color">
+
+          <div v-if="detailItem && detailItem.Color ">
             <h1>Color</h1>
-            <p> {{detailItem.Color}}</p>
+            <div v-html="detailItem.Color"> </div>
           </div>
           <hr>
 
-          <div v-if="detailItem.Taste">
+          <div v-if="detailItem && detailItem.Taste">
             <h1>Taste</h1>
-            <p>{{detailItem.Taste}}</p>
+            <div v-html="detailItem.Taste"></div>
           </div>
           <hr>
 
-         <div v-if="detailItem.Location">
+         <div v-if="detailItem && detailItem.Location">
            <h1>Location</h1>
-           <p>{{detailItem.Location}}</p>
+           <div v-html="detailItem.Location"></div>
          </div>
           <hr>
 
-          <div v-if="detailItem.Texture">
+          <div v-if="detailItem && detailItem.Texture">
              <h1>Texture</h1>
-             <p>{{detailItem.Texture}}</p>
+             <div v-html="detailItem.Texture"></div>
           </div>
           <hr>
 
@@ -102,40 +98,36 @@ export default {
     return{
       length:1,
       index: 0,
+      detailItem:[]
     }
   },
   computed:{
-  detailItem(){
-    return this.$store.state.detail
-  },
 
-    biyolog(){
-      const multiSplite=require('multi-split')
-    //  const resulat=multiSplite(this.$store.state.detail.Biyolog,['<ul>','</ul>', '</li>','<li>','<p>','</p>'])
-      return this.$store.state.detail.Biology
-    }
+
   },
-  created() {
-   this.lengths()
+  mounted() {
+    this.$axios.get('https://www.fishwatch.gov/api/species/'+fishName).then(res=>{
+
+     this.detailItem= res.data
+    })
   },
   methods:{
-    lengths(){
-      if(this.$store.state.detail['Image Gallery'] !== null){
-        this.length=this.$store.state.detail['Image Gallery'].length
-      }
-
-    },
     next () {
-      this.index = this.index + 1 === this.length
+   /*   this.index = this.index + 1 === this.length
         ? 0
-        : this.index + 1
+        : this.index + 1*/
     },
     prev () {
+      /*
       this.index = this.index - 1 < 0
         ? this.length - 1
-        : this.index - 1
+        : this.index - 1 */
     },
-  }
+
+
+  },
+
+
 }
 </script>
 

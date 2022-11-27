@@ -5,6 +5,9 @@ export  default {
   },
   details(state,payload){
     state.detail=payload
+  },
+  setFishName(state,payload){
+    state.detail=payload
   }
 
 }
