@@ -23,10 +23,7 @@ export default {
   methods:{
     btn(){
      let items= this.item['Species Name']
-      this.$router.push(items)
-
-
-     // this.$store.commit('details',this.item)
+      this.$router.push('/detail/'+items)
     },
 
   }
