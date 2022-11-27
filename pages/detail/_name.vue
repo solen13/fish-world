@@ -103,7 +103,7 @@ import fishDetailSkeleon from '../../components/skeletons/fish-detail-skeleon.vu
 
   created() {
     const fishName=this.$route.params.name
-    console.log("ss",this.$route)
+
     this.$axios.get('https://www.fishwatch.gov/api/species/'+fishName).then(res=>{
      this.detailItem= res.data[0]
     })
@@ -111,17 +111,23 @@ import fishDetailSkeleon from '../../components/skeletons/fish-detail-skeleon.vu
 
   methods:{
     next () {
-     this.index = this.index + 1 === this.detailItem[['Image Gallery']].length
-        ? 0
-        : this.index + 1
+      if(this.detailItem[['Image Gallery']] !==null){
+        this.index = this.index + 1 === this.detailItem[['Image Gallery']].length
+          ? 0
+          : this.index + 1
+      }
+
 
     },
 
 
     prev () {
-      this.index = this.index - 1 < 0
-        ? this.detailItem[['Image Gallery']].length - 1
-        : this.index - 1
+      if(this.detailItem[['Image Gallery']] !==null){
+        this.index = this.index - 1 < 0
+          ? this.detailItem[['Image Gallery']].length - 1
+          : this.index - 1
+      }
+
     },
 
   },
