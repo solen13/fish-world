@@ -4,7 +4,7 @@
     <v-app-bar color="deep-purple accent-4" dense dark >
 
 
-      <v-btn @click="$router.push('/')" class="hidden-sm-and-up">Home</v-btn>
+      <v-btn @click="$router.push('/')" class="hidden-sm-and-up">Homes</v-btn>
 
       <v-toolbar-title class="hidden-sm-and-down white--text" @click="$router.push('/')" style="cursor: pointer">Fish World</v-toolbar-title>
 
