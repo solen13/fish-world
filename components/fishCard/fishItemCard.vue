@@ -17,9 +17,6 @@
 <script>
 export default {
   name: "fishItemCard",
-
-
-
   props: {
     item: {
       type: Object,

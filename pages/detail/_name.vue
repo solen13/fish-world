@@ -53,6 +53,12 @@
       <v-col  md="6" sm="12">
         <div class="px-3">
 
+          <div v-if=" detailItem.Biology ">
+            <h1>Biology</h1>
+            <div v-html="detailItem.Biology"> </div>
+          </div>
+          <hr>
+
           <div v-if=" detailItem.Color ">
             <h1>Color</h1>
             <div v-html="detailItem.Color"> </div>
@@ -103,7 +109,6 @@ import fishDetailSkeleon from '../../components/skeletons/fish-detail-skeleon.vu
 
   created() {
     const fishName=this.$route.params.name
-
     this.$axios.get('https://www.fishwatch.gov/api/species/'+fishName).then(res=>{
      this.detailItem= res.data[0]
     })

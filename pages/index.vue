@@ -15,7 +15,7 @@
 
 <script>
 import FishItemCard from "../components/fishCard/fishItemCard";
-import VueObserveVisibilityPlugin from 'vue-observe-visibility'
+
 export default {
   name: 'IndexPage',
   components: {FishItemCard},
@@ -24,6 +24,7 @@ export default {
     fishItem(){
       return  this.$store.state.fishItems
     },
+
 
 
   },
