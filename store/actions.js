@@ -6,13 +6,5 @@ export default {
       })
 
   },
-  getFish({commit},fishName){
-    console.log(fishName)
-
-  }
-
-
-
-
 
 }
