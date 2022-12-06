@@ -1,6 +1,6 @@
 # fish
 
-![Uploading bandicam 2022-12-06 18-40-22-488 (1).gif…]()
+![bandicam 2022-12-06 18-40-22-488 (1)](https://user-images.githubusercontent.com/76258170/206010293-c925db2b-60df-4fc4-9d4b-6e5a78079345.gif)
 
 
 
