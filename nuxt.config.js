@@ -1,7 +1,12 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  static:'target',
+  ssr: false,
+  generate: {
+    fallback: true
+  },
+
   head: {
     title: 'fish',
     htmlAttrs: {
