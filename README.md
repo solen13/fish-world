@@ -2,6 +2,7 @@
 
 ## Build Setup
 
+![](../../bandicam 2022-12-06 18-40-22-488 (1).gif)
 ```bash
 # install dependencies
 $ npm install
